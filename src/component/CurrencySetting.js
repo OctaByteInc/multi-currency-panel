@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {SettingToggle, TextStyle, TextContainer, Heading, Collapsible, Card, Subheading} from '@shopify/polaris';
 
+import CurrencyList from './CurrencyList';
+
 class CurrencySetting extends Component {
     state = {
       allCurrencies: true,
@@ -42,16 +44,9 @@ class CurrencySetting extends Component {
                 { this.descriptionText() }
             </TextContainer>
             </SettingToggle>
-          
-            <div className="Polaris-Card__Section" style={{ display: open ? '' : 'none' }}>
-                <Collapsible open={open} id="basic-collapsible">
-                    <Subheading>Included currencies</Subheading>
-                    <TextStyle variation="subdued">
-                        Add those currencies which you want to allow.
-                    </TextStyle>
-                    
-                </Collapsible>
-            </div>
+            <Collapsible open={open} id="basic-collapsible">
+                <CurrencyList />
+            </Collapsible>
         </Card>
       );
 

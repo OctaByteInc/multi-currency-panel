@@ -14,7 +14,6 @@ class App extends Component {
           <AppSetting/>
           <GeoLocation/>
           <CurrencySetting/>
-          <CurrencyList/>
         </Page>
       </AppProvider>
     );
