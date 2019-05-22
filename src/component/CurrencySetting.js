@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {SettingToggle, TextStyle, TextContainer, Heading, Collapsible, Card, Subheading} from '@shopify/polaris';
+import {SettingToggle, TextStyle, TextContainer, Heading, Collapsible, Card} from '@shopify/polaris';
 
 import CurrencyList from './CurrencyList';
 
