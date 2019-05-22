@@ -1,14 +1,24 @@
 import React, {Component} from 'react';
 import { CalloutCard, TextStyle, TextContainer } from '@shopify/polaris';
+import Popup from './Popup';
 
 class CustomerExplanation extends Component {
 
+    state = {
+        openVideoTutorial: false,
+    };
+
     render(){
+        const {openVideoTutorial} = this.state;
+
         return(
             <CalloutCard
                 title="Explaining to your customers what happens at checkout"
                 illustration="https://cdn.shopify.com/s/assets/admin/checkout/settings-customizecart-705f57c725ac05be5a34ec20c05b94298cb8afd10aac7bd9c7ad02030f48cfa0.svg"
-                primaryAction={{}}
+                primaryAction={{
+                    content: 'Video Tutorial',
+                    onAction: () => this.setState({ openVideoTutorial:true })
+                }}
                 >
                 <TextContainer>
                 <p>    
@@ -18,8 +28,8 @@ class CustomerExplanation extends Component {
                 </p>
                 <p>
                 When your customers reach checkout, your shop reverts back to its 
-                trading currency without explanation. You can, however, edit your 
-                <b>cart.liquid</b> template to explain what will happen. You could also 
+                trading currency without explanation. You can, however, edit 
+                your <b>cart.liquid</b> template to explain what will happen. You could also 
                 add an explanation to the checkout pages using a custom checkout 
                 translation (where you only translate what you want).
                 </p>
@@ -35,6 +45,14 @@ class CustomerExplanation extends Component {
                 current exchange rate.&#x3C;/div&#x3E;
                 </TextStyle>
                 </TextContainer>
+            {
+                openVideoTutorial ? 
+                <Popup 
+                    key={Math.random()}
+                    title="Reach more shoppers with Instagram product tags" 
+                    video="ta_tTZrarE0" />
+                : ''    
+            }
             </CalloutCard>
         )
     }
