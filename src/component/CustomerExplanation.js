@@ -37,12 +37,15 @@ class CustomerExplanation extends Component {
                 For example, you could use this in <b>cart.liquid</b> next to the checkout button:
                 </p>
                 <TextStyle variation="code">
-                &#x3C;div id=&#x22;octabyte-mcc-cart&#x22; style=&#x22;display:none&#x22;&#x3E;
-                {'{{shop.name}}'}  process all orders in  {'{{shop.currency}}'}. 
-                While the content of your cart is currently displayed 
-                in &#x3C;span id=&#x22;octabyte-selected-currency&#x22;&#x3E;&#x3C;/span&#x3E;, 
-                you will checkout using  {'{{shop.currency}}'}  at the most 
-                current exchange rate.&#x3C;/div&#x3E;
+                <span className="mcc-code-tag">&#x3C;div</span> <span className="mcc-code-attr">id=</span><span className="mcc-code-attr-val">&#x22;octabyte-mcc-cart&#x22;</span> <span className="mcc-code-attr">style=</span><span className="mcc-code-attr-val">&#x22;display:none&#x22;</span><span className="mcc-code-tag">&#x3E;</span>
+                <br/>
+                <span className="mcc-code-tag">{'{{shop.name}}'}</span>  <span className="mcc-code-text">process all orders in</span>  <span className="mcc-code-tag">{'{{shop.currency}}'}</span>
+                <span className="mcc-code-text">. While the content of your cart is <br/> currently displayed 
+                in</span> <span className="mcc-code-tag">&#x3C;span</span> <span className="mcc-code-attr">id=</span><span className="mcc-code-attr-val">&#x22;octabyte-selected-currency&#x22;</span><span className="mcc-code-tag">&#x3E;&#x3C;/span&#x3E;</span><span className="mcc-code-text">, 
+                you will checkout using</span>  <span className="mcc-code-tag">{'{{shop.currency}}'}</span>  <span className="mcc-code-text">at the most 
+                current exchange rate.</span>
+                <br/>
+                <span className="mcc-code-tag">&#x3C;/div&#x3E;</span>
                 </TextStyle>
                 </TextContainer>
             {
