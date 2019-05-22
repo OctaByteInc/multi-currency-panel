@@ -1,5 +1,16 @@
 import React, { Component } from 'react';
-import {SettingToggle, TextStyle, TextContainer, Heading, Collapsible, Card, List, Subheading, Button} from '@shopify/polaris';
+import {
+    SettingToggle,
+    TextStyle, 
+    TextContainer, 
+    Heading, 
+    Collapsible, 
+    Card, 
+    List, 
+    Subheading, 
+    Banner,
+    Link
+} from '@shopify/polaris';
 
 import CurrencyPicker from './CurrencyPicker';
 import Popup from './Popup';
@@ -7,7 +18,6 @@ import Popup from './Popup';
 class PlacementSetting extends Component {
     state = {
       defaultPicker: true,
-      showIcons: false,
     };
 
     descriptionText = ()  => {
@@ -28,7 +38,7 @@ class PlacementSetting extends Component {
 
     generateCode = () => {
         console.log('Open poopup');
-        this.setState({ showIcons: true });
+        this.setState({ activeIconPanel: true });
     };
 
     render() {
@@ -58,7 +68,11 @@ class PlacementSetting extends Component {
                 <div className="Polaris-Card__Section">
                     <Subheading>Follow these setps</Subheading><br/>
                     <List type="number">
-                        <List.Item>Generate the code and copy it</List.Item>
+                        <List.Item>Copy this 
+                            code <TextStyle variation="code">
+                            &#x3C;span icon=&#x22;default&#x22; id=&#x22;octabyte-mcc&#x22;&#x3E;&#x3C;/span&#x3E; 
+                            </TextStyle> 
+                        </List.Item>
                         <List.Item>Go to <b>Themes</b> inside <b>Online store</b></List.Item>
                         <List.Item>Click on <b>Actions -> Edit Code</b> </List.Item>
                         <List.Item>Open <b>theme.liquid</b> from <b>Layout</b> folder</List.Item>
@@ -66,9 +80,14 @@ class PlacementSetting extends Component {
                             Place the code where you want to show <b>currency picker</b>
                         </List.Item>
                         <List.Item>Save the file.</List.Item>
-                    </List>
+                    </List>   
                     <br/>
-                    <Button onClick={this.generateCode.bind()}>Generate Code</Button>
+                    <Banner status="info" onDismiss={() => {}}>
+                        <p>
+                            You can also customize currency picker <b>icon</b>{' '}
+                            <Link url="">For detailed information check it.</Link>
+                        </p>
+                    </Banner>
                 </div>
              
             <Popup 

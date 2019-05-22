@@ -5,7 +5,7 @@ import AppSetting from './component/AppSetting';
 import GeoLocation from './component/GeoLocation';
 import CurrencySetting from './component/CurrencySetting';
 import PlacementSetting from './component/PlacementSetting';
-import PriceIcon from './component/PriceIcon';
+import CustomerExplanation from './component/CustomerExplanation';
 
 
 class App extends Component {
@@ -13,13 +13,11 @@ class App extends Component {
     return (
       <AppProvider>
         <Page title="Settings" separator>
-          <PriceIcon src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/sega.svg"/>
-          <PriceIcon src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/sega.svg"/>
-          <PriceIcon src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/sega.svg"/>
-          <PlacementSetting/>
           <AppSetting/>
-          <GeoLocation/>
           <CurrencySetting/>
+          <GeoLocation/>
+          <PlacementSetting/>
+          <CustomerExplanation/>
         </Page>
       </AppProvider>
     );
